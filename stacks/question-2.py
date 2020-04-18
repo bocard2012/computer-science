@@ -1,6 +1,7 @@
 sequence = input('Enter with your code: ')
 
 queue = []
+error = []
 
 def parentesis(character):
   if (character == ')'):
@@ -12,13 +13,15 @@ def stacks(character):
   queue.append(character)
 
 def unpacks(character):
-  try:
+  if (len(queue) != 0):
     queue.pop()
-  except:
-    print('error')
+  else:
+    error.append(character)
 
 for i in sequence:
   parentesis(i)
 
-if (len(queue) != 0):
-  print('error')
+if ((len(queue) != 0) and (len(error) != 0)):
+  print('false')
+else:
+  print('true')
