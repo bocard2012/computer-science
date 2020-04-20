@@ -1,5 +1,5 @@
-sequence = input('Enter with your code: ')
-
+# sequence = input('Enter with your code: ')
+sequence = '))(('
 queue = []
 error = []
 
@@ -21,7 +21,10 @@ def unpacks(character):
 for i in sequence:
   parentesis(i)
 
-if ((len(queue) != 0) and (len(error) != 0)):
+print(error)
+print(queue)
+
+if ((len(queue) != 0) or (len(error) != 0)):
   print('false')
 else:
   print('true')
